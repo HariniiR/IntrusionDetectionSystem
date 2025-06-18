@@ -82,7 +82,7 @@ python IntrusionDetectionSystem/scripts/Train.py
 ### 3. Predict on new data
 
 ```bash
-python src/IntrusionDetectionSystem/scripts/Predictor.py
+python IntrusionDetectionSystem/scripts/Predictor.py
 ```
 
 ---
