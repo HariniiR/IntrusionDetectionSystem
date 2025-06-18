@@ -38,14 +38,19 @@ duration, protocol_type, service, flag, src_bytes, dst_bytes, ..., class
 
 ```
 IntrusionDetectionSystem/
-├── DataPreProcessing.py     # Handles encoding and normalization
-├── NeuralNetwork.py         # Neural net logic: init, train, predict
-├── Train.py                 # Training script
-├── Predict.py               # Prediction logic on new samples
-├── Predictor.py             # Run predictions from saved model
-├── training_data.csv        # Training data
-├── testing_data.csv         # Test samples
-└── README.md                # Project documentation
+├── Trainedmodel.npz            # Saved model
+├── datasets/                   # Folder for all CSV files
+│   ├── training_data.csv       #Training data with lesser columns for a simpler model
+│   ├── TestingData.csv
+│   └── TrainingData.csv     
+│
+└── scripts/                    # All Python scripts
+    ├── DataPreProcessing.py   # Preprocessing utilities
+    ├── NeuralNetwork.py       # Model class with train/predict logic
+    ├── Train.py               # Script to train the model
+    ├── Predict.py             # Script to run predictions
+    └── Predictor.py           # Script to load model & predict new input
+
 ```
 
 ---
@@ -71,13 +76,13 @@ pip install numpy pandas
 ### 2. Train the model
 
 ```bash
-python src/IntrusionDetectionSystem/Train.py
+python IntrusionDetectionSystem/scripts/Train.py
 ```
 
 ### 3. Predict on new data
 
 ```bash
-python src/IntrusionDetectionSystem/Predictor.py
+python src/IntrusionDetectionSystem/scripts/Predictor.py
 ```
 
 ---
